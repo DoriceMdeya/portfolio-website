@@ -4,7 +4,7 @@ export default function Hero() {
   from-blue-50 to-indigo-100"> 
         <div className="text-center px-4"> 
           <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-6"> 
-            Dorice George 
+            DOJM FOR FUTURE 
           </h1> 
           <p className="text-xl md:text-2xl text-gray-600 mb-8"> 
             Web Developer 
