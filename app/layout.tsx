@@ -21,9 +21,7 @@ shadow-sm">
           <div className="container mx-auto px-4 py-4 flex justify-between items-center"> 
              
             <nav className="flex space-x-6"> 
-              <Link href="/" className="text-gray-600 hover:text-blue-600 transition"> 
-                Home 
-              </Link> 
+              
               <Link href="/about" className="text-gray-600 hover:text-blue-600 transition"> 
                 About 
               </Link> 
