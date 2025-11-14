@@ -13,15 +13,15 @@ export default function Contact() {
                 <div className="space-y-3"> 
                   <p className="flex items-center text-gray-600"> 
                     <span className="font-medium mr-2">Email:</span> 
-                    dorice.george@example.com 
+                    doricegeorge2002@gmail.com 
                   </p> 
                   <p className="flex items-center text-gray-600"> 
                     <span className="font-medium mr-2">Phone:</span> 
-                    +1 (555) 123-4567 
+                    +255712442916 
                   </p> 
                   <p className="flex items-center text-gray-600"> 
                     <span className="font-medium mr-2">Location:</span> 
-                    Your City, Country 
+                    Iringa, Tanzania 
                   </p> 
                 </div> 
               </div> 
