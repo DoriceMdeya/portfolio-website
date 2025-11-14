@@ -3,12 +3,10 @@ import { Inter } from 'next/font/google';
 import './globals.css'; 
 import Link from 'next/link'; 
 const inter = Inter({ subsets: ['latin'] }); 
-
 export const metadata: Metadata = { 
 title: 'Dorice George - Web Developer', 
 description: 'Professional portfolio of Dorice George', 
 }; 
-
 export default function RootLayout({ 
 children, 
 }: { 
@@ -56,10 +54,10 @@ transition">
         {/* Simple Footer */} 
         <footer className="bg-gray-800 text-white py-8"> 
           <div className="container mx-auto px-4 text-center"> 
-            <p>@2025 Dorice George. All rights reserved.</p> 
+            <p>&copy; 2024 Dorice George. All rights reserved.</p> 
           </div> 
         </footer> 
       </body> 
     </html> 
   ); 
-}
+} 

@@ -34,9 +34,9 @@ hover:bg-blue-50 transition"
             </Link> 
           </div> 
  
-          
+         
         </div> 
       </section> 
     </div> 
 ); 
-}
+} 
