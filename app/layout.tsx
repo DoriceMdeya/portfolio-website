@@ -19,9 +19,7 @@ return (
         <header className="fixed top-0 w-full bg-white/90 backdrop-blur-sm z-50 
 shadow-sm"> 
           <div className="container mx-auto px-4 py-4 flex justify-between items-center"> 
-            <Link href="/" className="text-xl font-bold text-gray-800"> 
-              Dorice George 
-            </Link> 
+             
             <nav className="flex space-x-6"> 
               <Link href="/" className="text-gray-600 hover:text-blue-600 transition"> 
                 Home 
