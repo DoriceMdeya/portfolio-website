@@ -1,4 +1,53 @@
+'use client';
+
+import { useState } from 'react';
+
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setMessage('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setMessage('Message sent successfully!');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setMessage(data.error || 'Failed to send message');
+      }
+    } catch (error) {
+      setMessage('Failed to send message. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800">
       <div className="container mx-auto px-4">
@@ -111,28 +160,47 @@ export default function Contact() {
             <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-6">
               Send Me a Message
             </h3>
-            <form className="space-y-6">
+            
+            {message && (
+              <div className={`p-4 rounded-lg mb-6 ${
+                message.includes('successfully') 
+                  ? 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300' 
+                  : 'bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300'
+              }`}>
+                {message}
+              </div>
+            )}
+            
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Your Name
+                    Your Name 
                   </label>
                   <input
                     type="text"
                     id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
                     className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white"
-                    placeholder="John Doe"
+                    placeholder="Dojm George"
                   />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Email Address
+                    Email Address 
                   </label>
                   <input
                     type="email"
                     id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
                     className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white"
-                    placeholder="john@example.com"
+                    placeholder="dojm@example.com"
                   />
                 </div>
               </div>
@@ -143,26 +211,34 @@ export default function Contact() {
                 <input
                   type="text"
                   id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white"
                   placeholder="Project Collaboration"
                 />
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Message
+                  Message 
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   rows={5}
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                   className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white"
                   placeholder="Tell me about your project..."
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200"
+                disabled={isLoading}
+                className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200"
               >
-                Send Message
+                {isLoading ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>
