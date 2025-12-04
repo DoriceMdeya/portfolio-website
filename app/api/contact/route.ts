@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    // Email content
+    // Email details
     const mailOptions = {
       from: email,
       to: process.env.EMAIL_USER, // Your email where you want to receive messages
@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
       `,
     };
 
-    // Send email
+    // send email
     await transporter.sendMail(mailOptions);
 
     return NextResponse.json(
