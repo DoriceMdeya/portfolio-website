@@ -1,0 +1,9 @@
+# robots.txt for Dorice George Portfolio
+User-agent: *
+Allow: /
+
+# Disallow API routes
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://doricegeorge.com/sitemap.xml
