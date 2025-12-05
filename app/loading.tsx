@@ -7,7 +7,7 @@ export default function Loading() {
         <div className="relative mb-8">
           <div className="w-20 h-20 rounded-2xl overflow-hidden mx-auto">
             <Image
-              src="/images/potfolio logo.jpeg"
+              src="/images/profile.png"
               alt="Loading"
               width={80}
               height={80}

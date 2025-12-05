@@ -75,10 +75,10 @@ export default function RootLayout({
         <meta name="twitter:title" content="Dorice George | Full-Stack Developer" />
         <meta name="twitter:description" content="Portfolio of Dorice George - A passionate Full-Stack Developer" />
         
-        <link rel="icon" type="image/jpeg" href="/images/potfolio logo.jpeg" />
-        <link rel="icon" type="image/jpeg" sizes="32x32" href="/images/potfolio logo.jpeg" />
-        <link rel="icon" type="image/jpeg" sizes="16x16" href="/images/potfolio logo.jpeg" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/images/potfolio logo.jpeg" />
+        <link rel="icon" type="image/png" href="/images/profile.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/profile.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/profile.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/profile.png" />
       </head>
       <body className={`${outfit.className} bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300`}>
         {/* Skip Navigation */}
@@ -99,7 +99,7 @@ export default function RootLayout({
               <Link href="/" className="flex items-center space-x-2 group">
                 <div className="w-10 h-10 rounded-xl overflow-hidden group-hover:scale-110 transition-transform">
                   <Image 
-                    src="/images/potfolio logo.jpeg" 
+                    src="/images/profile.png" 
                     alt="Dorice George" 
                     width={40} 
                     height={40}
@@ -189,7 +189,7 @@ export default function RootLayout({
                 <Link href="/" className="flex items-center space-x-2 mb-4">
                   <div className="w-10 h-10 rounded-xl overflow-hidden">
                     <Image 
-                      src="/images/potfolio logo.jpeg" 
+                      src="/images/profile.png" 
                       alt="Dorice George" 
                       width={40} 
                       height={40}

@@ -40,7 +40,7 @@ export default function About() {
               <div className="aspect-square rounded-3xl bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] p-1">
                 <div className="w-full h-full rounded-3xl overflow-hidden">
                   <Image 
-                    src="/images/potfolio logo.jpeg" 
+                    src="/images/profile.png" 
                     alt="Dorice George" 
                     width={400} 
                     height={400}

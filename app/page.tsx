@@ -29,7 +29,7 @@ export default function Home() {
             <div className={`mb-8 ${mounted ? 'animate-slide-up' : 'opacity-0'}`}>
               <div className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden border-4 border-[var(--primary)] shadow-xl animate-float">
                 <Image
-                  src="/images/potfolio logo.jpeg"
+                  src="/images/profile.png"
                   alt="Dorice George"
                   width={160}
                   height={160}
@@ -135,19 +135,19 @@ export default function Home() {
                 title: 'E-Commerce Platform',
                 description: 'A full-featured online store with shopping cart, payment integration, and admin dashboard.',
                 tech: ['React', 'Node.js', 'MongoDB'],
-                image: '/images/e commerce.jfif',
+                image: '/images/e-commerce.jpg',
               },
               {
                 title: 'Task Management App',
                 description: 'A productivity app for managing daily tasks and projects with real-time collaboration.',
                 tech: ['Next.js', 'Firebase', 'Tailwind'],
-                image: '/images/task mamangerment app.jfif',
+                image: '/images/task-management-app.jpg',
               },
               {
                 title: 'Portfolio Website',
                 description: 'A responsive portfolio website showcasing various web projects and skills.',
                 tech: ['Next.js', 'TypeScript', 'Tailwind'],
-                image: '/images/potfolio logo.jpeg',
+                image: '/images/profile.png',
               },
             ].map((project, index) => (
               <div key={index} className="project-card card-hover bg-[var(--card-bg)] rounded-2xl overflow-hidden border border-[var(--card-border)]">

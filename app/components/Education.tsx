@@ -19,7 +19,7 @@ const education = [
       'Strong foundation in Database Management Systems',
       'Proficient in System Analysis and Design',
     ],
-    logo: '/images/potfolio logo.jpeg',
+    logo: '/images/profile.png',
   },
 ];
 
